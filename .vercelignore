@@ -1,0 +1,4 @@
+# Ignore everything except the necessary files for fvmf-foundation
+apps/fvmf-venue
+packages/*
+!apps/fvmf-foundation
