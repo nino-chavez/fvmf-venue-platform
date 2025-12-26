@@ -1,0 +1,23 @@
+# Dependencies
+node_modules/
+
+# Environment files
+.env
+.env.local
+.env*.local
+
+# Next.js
+.next/
+out/
+
+# Vercel
+.vercel
+
+# Debug
+npm-debug.log*
+
+# OS
+.DS_Store
+
+# Test files
+create-test-events.js

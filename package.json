@@ -1,0 +1,23 @@
+{
+  "name": "fvmf-venue-platform",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Monorepo for Venue Aurora and Fox Valley Music Foundation",
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "lint": "turbo run lint",
+    "dev:venue": "turbo run dev --filter=venue-aurora",
+    "dev:foundation": "turbo run dev --filter=fvmf-foundation",
+    "build:venue": "turbo run build --filter=venue-aurora",
+    "build:foundation": "turbo run build --filter=fvmf-foundation"
+  },
+  "devDependencies": {
+    "turbo": "latest"
+  },
+  "packageManager": "npm@10.0.0",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ]
+}

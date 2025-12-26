@@ -1,0 +1,410 @@
+/**
+ * The Venue Aurora - Design System Tokens
+ *
+ * A music-forward design system that captures the energy of live performance
+ * while maintaining excellent information hierarchy and reducing friction.
+ *
+ * Design Principles:
+ * 1. Stage Presence - Bold, immersive visuals that evoke live music
+ * 2. Rhythm & Flow - Motion that follows musical timing patterns
+ * 3. Signal Clarity - Critical info (date, price, availability) always prominent
+ * 4. Friction Reduction - One-tap actions, progressive disclosure
+ */
+
+@layer base {
+  :root {
+    /* ==========================================
+     * COLOR SYSTEM - "Stage Lights"
+     * Inspired by concert lighting: warm spots, cool ambience, neon accents
+     * ========================================== */
+
+    /* Primary - Stage Orange (warm spotlight) */
+    --venue-primary-50: 33 100% 96%;
+    --venue-primary-100: 34 100% 91%;
+    --venue-primary-200: 32 98% 83%;
+    --venue-primary-300: 31 97% 72%;
+    --venue-primary-400: 27 96% 61%;
+    --venue-primary-500: 25 95% 53%;    /* Main brand - warm amber */
+    --venue-primary-600: 21 90% 48%;
+    --venue-primary-700: 17 88% 40%;
+    --venue-primary-800: 15 79% 34%;
+    --venue-primary-900: 15 75% 28%;
+    --venue-primary-950: 13 81% 15%;
+
+    /* Secondary - Electric Blue (stage wash) */
+    --venue-secondary-50: 214 100% 97%;
+    --venue-secondary-100: 214 95% 93%;
+    --venue-secondary-200: 213 97% 87%;
+    --venue-secondary-300: 212 96% 78%;
+    --venue-secondary-400: 213 94% 68%;
+    --venue-secondary-500: 217 91% 60%;  /* Electric blue accent */
+    --venue-secondary-600: 221 83% 53%;
+    --venue-secondary-700: 224 76% 48%;
+    --venue-secondary-800: 226 71% 40%;
+    --venue-secondary-900: 224 64% 33%;
+    --venue-secondary-950: 226 57% 21%;
+
+    /* Accent - Neon Magenta (highlight moments) */
+    --venue-accent-50: 327 73% 97%;
+    --venue-accent-100: 326 78% 95%;
+    --venue-accent-200: 326 85% 90%;
+    --venue-accent-300: 327 87% 82%;
+    --venue-accent-400: 329 86% 70%;
+    --venue-accent-500: 330 81% 60%;     /* Neon pink for CTAs */
+    --venue-accent-600: 333 71% 51%;
+    --venue-accent-700: 335 78% 42%;
+    --venue-accent-800: 336 74% 35%;
+    --venue-accent-900: 336 69% 30%;
+    --venue-accent-950: 338 75% 18%;
+
+    /* Neutrals - Venue Dark (backstage black) */
+    --venue-neutral-50: 0 0% 98%;
+    --venue-neutral-100: 240 5% 96%;
+    --venue-neutral-200: 240 6% 90%;
+    --venue-neutral-300: 240 5% 84%;
+    --venue-neutral-400: 240 5% 65%;
+    --venue-neutral-500: 240 4% 46%;
+    --venue-neutral-600: 240 5% 34%;
+    --venue-neutral-700: 240 5% 26%;
+    --venue-neutral-800: 240 4% 16%;
+    --venue-neutral-900: 240 6% 10%;
+    --venue-neutral-950: 240 10% 4%;     /* True black for backgrounds */
+
+    /* Semantic - Status Colors */
+    --venue-success: 142 76% 36%;        /* Available/On Sale */
+    --venue-warning: 38 92% 50%;         /* Limited/Few Left */
+    --venue-error: 0 84% 60%;            /* Sold Out */
+    --venue-info: 199 89% 48%;           /* Info/Upcoming */
+
+    /* ==========================================
+     * GENRE PALETTE - Music Category Colors
+     * Quick visual categorization of events
+     * ========================================== */
+    --genre-jazz: 45 93% 47%;            /* Gold */
+    --genre-blues: 217 91% 60%;          /* Blue */
+    --genre-rock: 0 84% 60%;             /* Red */
+    --genre-tribute: 280 87% 65%;        /* Purple */
+    --genre-bigband: 38 92% 50%;         /* Amber */
+    --genre-acoustic: 142 76% 36%;       /* Green */
+    --genre-folk: 25 95% 53%;            /* Orange */
+
+    /* ==========================================
+     * SURFACE SYSTEM - Layered Depths
+     * Creates visual hierarchy like stage lighting
+     * ========================================== */
+    --surface-base: var(--venue-neutral-950);
+    --surface-raised: var(--venue-neutral-900);
+    --surface-overlay: var(--venue-neutral-800);
+    --surface-elevated: var(--venue-neutral-700);
+    --surface-spotlight: var(--venue-neutral-600);
+
+    /* Glass surfaces for overlays */
+    --glass-subtle: 240 6% 10% / 0.8;
+    --glass-medium: 240 6% 10% / 0.9;
+    --glass-strong: 240 6% 10% / 0.95;
+
+    /* ==========================================
+     * TYPOGRAPHY SYSTEM
+     * ========================================== */
+    --font-display: 'Space Grotesk', 'Sora', system-ui, sans-serif;
+    --font-heading: 'Inter', system-ui, sans-serif;
+    --font-body: 'Inter', system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+    /* Type Scale - Musical (based on golden ratio 1.618) */
+    --text-xs: 0.75rem;      /* 12px - Fine print */
+    --text-sm: 0.875rem;     /* 14px - Secondary info */
+    --text-base: 1rem;       /* 16px - Body */
+    --text-lg: 1.125rem;     /* 18px - Emphasis */
+    --text-xl: 1.25rem;      /* 20px - Subheadings */
+    --text-2xl: 1.5rem;      /* 24px - Card titles */
+    --text-3xl: 1.875rem;    /* 30px - Section heads */
+    --text-4xl: 2.25rem;     /* 36px - Page titles */
+    --text-5xl: 3rem;        /* 48px - Hero */
+    --text-6xl: 3.75rem;     /* 60px - Display */
+    --text-7xl: 4.5rem;      /* 72px - Billboard */
+
+    /* ==========================================
+     * SPACING SYSTEM - 8pt Grid
+     * ========================================== */
+    --space-0: 0;
+    --space-1: 0.25rem;      /* 4px */
+    --space-2: 0.5rem;       /* 8px */
+    --space-3: 0.75rem;      /* 12px */
+    --space-4: 1rem;         /* 16px */
+    --space-5: 1.25rem;      /* 20px */
+    --space-6: 1.5rem;       /* 24px */
+    --space-8: 2rem;         /* 32px */
+    --space-10: 2.5rem;      /* 40px */
+    --space-12: 3rem;        /* 48px */
+    --space-16: 4rem;        /* 64px */
+    --space-20: 5rem;        /* 80px */
+    --space-24: 6rem;        /* 96px */
+
+    /* ==========================================
+     * MOTION SYSTEM - "Musical Timing"
+     * Based on musical note durations
+     * ========================================== */
+
+    /* Durations (named after note values) */
+    --duration-sixteenth: 75ms;    /* Micro interactions */
+    --duration-eighth: 150ms;      /* Button feedback */
+    --duration-quarter: 250ms;     /* Standard transitions */
+    --duration-half: 400ms;        /* Modal/drawer open */
+    --duration-whole: 600ms;       /* Page transitions */
+    --duration-measure: 1000ms;    /* Complex sequences */
+
+    /* Easings (named after musical dynamics) */
+    --ease-staccato: cubic-bezier(0.4, 0, 1, 1);       /* Sharp, quick */
+    --ease-legato: cubic-bezier(0.4, 0, 0.2, 1);       /* Smooth, flowing */
+    --ease-crescendo: cubic-bezier(0.16, 1, 0.3, 1);   /* Building up */
+    --ease-sforzando: cubic-bezier(0.68, -0.6, 0.32, 1.6); /* Punchy bounce */
+    --ease-rubato: cubic-bezier(0.65, 0, 0.35, 1);     /* Expressive */
+
+    /* Spring configs (for JS animations) */
+    --spring-gentle: 100 15;       /* stiffness damping */
+    --spring-snappy: 300 20;
+    --spring-bouncy: 500 25;
+
+    /* ==========================================
+     * BORDERS & RADIUS
+     * ========================================== */
+    --radius-none: 0;
+    --radius-sm: 0.25rem;    /* 4px - Tags, chips */
+    --radius-md: 0.5rem;     /* 8px - Buttons, inputs */
+    --radius-lg: 0.75rem;    /* 12px - Cards */
+    --radius-xl: 1rem;       /* 16px - Modals */
+    --radius-2xl: 1.5rem;    /* 24px - Hero cards */
+    --radius-full: 9999px;   /* Pills, avatars */
+
+    --border-width: 1px;
+    --border-color: hsl(var(--venue-neutral-800));
+
+    /* ==========================================
+     * SHADOWS - "Stage Depth"
+     * Layered shadows create dimensional depth
+     * ========================================== */
+
+    /* Ambient glow (like stage wash) */
+    --shadow-glow-sm: 0 0 20px -5px hsl(var(--venue-primary-500) / 0.3);
+    --shadow-glow-md: 0 0 40px -10px hsl(var(--venue-primary-500) / 0.4);
+    --shadow-glow-lg: 0 0 60px -15px hsl(var(--venue-primary-500) / 0.5);
+
+    /* Elevation shadows */
+    --shadow-xs: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+
+    /* Interactive shadows (hover states) */
+    --shadow-interactive:
+      0 0 0 1px hsl(var(--venue-primary-500) / 0.1),
+      0 4px 16px -4px hsl(var(--venue-primary-500) / 0.2);
+
+    /* ==========================================
+     * Z-INDEX SYSTEM
+     * ========================================== */
+    --z-base: 0;
+    --z-raised: 10;
+    --z-dropdown: 100;
+    --z-sticky: 200;
+    --z-overlay: 300;
+    --z-modal: 400;
+    --z-popover: 500;
+    --z-toast: 600;
+    --z-spotlight: 700;
+
+    /* ==========================================
+     * COMPONENT TOKENS
+     * ========================================== */
+
+    /* Event Card */
+    --card-bg: hsl(var(--surface-raised));
+    --card-border: hsl(var(--venue-neutral-800));
+    --card-hover-border: hsl(var(--venue-primary-600));
+    --card-hover-glow: var(--shadow-glow-sm);
+
+    /* Buttons */
+    --btn-primary-bg: hsl(var(--venue-primary-500));
+    --btn-primary-hover: hsl(var(--venue-primary-400));
+    --btn-primary-active: hsl(var(--venue-primary-600));
+    --btn-secondary-bg: hsl(var(--venue-neutral-800));
+    --btn-secondary-hover: hsl(var(--venue-neutral-700));
+
+    /* Inputs */
+    --input-bg: hsl(var(--venue-neutral-900));
+    --input-border: hsl(var(--venue-neutral-700));
+    --input-focus-border: hsl(var(--venue-primary-500));
+    --input-focus-ring: hsl(var(--venue-primary-500) / 0.2);
+
+    /* Navigation */
+    --nav-height: 4rem;
+    --nav-bg: hsl(var(--glass-strong));
+
+    /* ==========================================
+     * INFORMATION ARCHITECTURE TOKENS
+     * Priority levels for event information display
+     * ========================================== */
+
+    /* Priority 1: Must see immediately */
+    --info-critical: hsl(var(--venue-primary-500));  /* Date, Price */
+
+    /* Priority 2: Decision factors */
+    --info-important: hsl(var(--venue-neutral-200)); /* Name, Genre */
+
+    /* Priority 3: Context */
+    --info-secondary: hsl(var(--venue-neutral-400)); /* Venue, Time */
+
+    /* Priority 4: Details on demand */
+    --info-tertiary: hsl(var(--venue-neutral-500));  /* Description */
+  }
+}
+
+/* ==========================================
+ * UTILITY CLASSES
+ * ========================================== */
+
+@layer utilities {
+  /* Glow effects */
+  .glow-primary {
+    box-shadow: var(--shadow-glow-md);
+  }
+
+  .glow-primary-intense {
+    box-shadow: var(--shadow-glow-lg);
+  }
+
+  /* Glass morphism */
+  .glass {
+    background: hsl(var(--glass-medium));
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .glass-subtle {
+    background: hsl(var(--glass-subtle));
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+
+  /* Text gradients */
+  .text-gradient-primary {
+    background: linear-gradient(135deg, hsl(var(--venue-primary-400)), hsl(var(--venue-primary-600)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-warm {
+    background: linear-gradient(135deg, hsl(var(--venue-primary-400)), hsl(var(--venue-accent-500)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Interactive states */
+  .interactive-lift {
+    transition: transform var(--duration-quarter) var(--ease-crescendo),
+                box-shadow var(--duration-quarter) var(--ease-legato);
+  }
+
+  .interactive-lift:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-interactive);
+  }
+
+  .interactive-lift:active {
+    transform: translateY(0);
+  }
+
+  /* Focus ring */
+  .focus-ring {
+    outline: none;
+  }
+
+  .focus-ring:focus-visible {
+    outline: 2px solid hsl(var(--venue-primary-500));
+    outline-offset: 2px;
+  }
+
+  /* Reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    .interactive-lift {
+      transition: none;
+    }
+
+    .interactive-lift:hover {
+      transform: none;
+    }
+  }
+}
+
+/* ==========================================
+ * ANIMATIONS
+ * ========================================== */
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(24px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: var(--shadow-glow-sm); }
+  50% { box-shadow: var(--shadow-glow-md); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes countDown {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+/* Animation classes */
+.animate-fadeIn { animation: fadeIn var(--duration-quarter) var(--ease-crescendo) forwards; }
+.animate-fadeInUp { animation: fadeInUp var(--duration-half) var(--ease-crescendo) forwards; }
+.animate-slideInRight { animation: slideInRight var(--duration-half) var(--ease-crescendo) forwards; }
+.animate-scaleIn { animation: scaleIn var(--duration-quarter) var(--ease-sforzando) forwards; }
+.animate-pulseGlow { animation: pulseGlow 2s var(--ease-legato) infinite; }
+.animate-shimmer {
+  background: linear-gradient(90deg, transparent, hsl(var(--venue-neutral-700)), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+.animate-countDown { animation: countDown 1s var(--ease-sforzando); }
+
+/* Stagger children */
+.stagger-children > * {
+  opacity: 0;
+  animation: fadeInUp var(--duration-half) var(--ease-crescendo) forwards;
+}
+
+.stagger-children > *:nth-child(1) { animation-delay: 0ms; }
+.stagger-children > *:nth-child(2) { animation-delay: 50ms; }
+.stagger-children > *:nth-child(3) { animation-delay: 100ms; }
+.stagger-children > *:nth-child(4) { animation-delay: 150ms; }
+.stagger-children > *:nth-child(5) { animation-delay: 200ms; }
+.stagger-children > *:nth-child(6) { animation-delay: 250ms; }
+.stagger-children > *:nth-child(7) { animation-delay: 300ms; }
+.stagger-children > *:nth-child(8) { animation-delay: 350ms; }
