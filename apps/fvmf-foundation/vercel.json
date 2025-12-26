@@ -1,7 +1,5 @@
 {
-  "buildCommand": "npx turbo run build --filter=fvmf-foundation",
-  "outputDirectory": ".next",
   "framework": "nextjs",
-  "installCommand": "npm install",
-  "ignoreCommand": "npx turbo-ignore"
+  "buildCommand": "npx turbo build --filter=fvmf-foundation...",
+  "outputDirectory": ".next"
 }
