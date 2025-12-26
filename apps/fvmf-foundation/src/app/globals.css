@@ -2,50 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  /* Vinyl Color System */
-  --vinyl-blue-deep: #003366;
-  --vinyl-blue-bright: #0066cc;
-  --vinyl-blue-electric: #00a8ff;
-  --vinyl-gold-warm: #f59e0b;
-  --vinyl-gold-bright: #fbbf24;
-  --vinyl-orange: #f97316;
-  --vinyl-orange-bright: #fb923c;
-  --vinyl-black: #0a0a0a;
-  --vinyl-cream: #fef3c7;
-
-  /* Semantic Colors */
-  --semantic-success: #059669;
-  --semantic-error: #dc2626;
-  --semantic-warning: #d97706;
-  --semantic-info: #2563eb;
-
-  /* Motion Tokens */
-  --motion-spin: 2s linear infinite;
-  --motion-reveal: 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
-  --motion-slide: 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-
-  /* Accessibility */
-  --touch-target-min: 48px;
-  --focus-ring-width: 3px;
-  --focus-ring-offset: 2px;
-  --focus-ring-color: var(--vinyl-gold-bright);
-}
-
 @layer base {
   body {
-    @apply bg-vinyl-black text-vinyl-cream;
-    @apply selection:bg-vinyl-gold-bright selection:text-vinyl-blue-deep;
+    @apply bg-white text-gray-900;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-display tracking-wide;
+    @apply font-bold;
   }
 
   /* Focus visible styles (keyboard navigation) */
   *:focus-visible {
-    outline: var(--focus-ring-width) solid var(--focus-ring-color);
-    outline-offset: var(--focus-ring-offset);
+    @apply outline-2 outline-offset-2 outline-blue-600;
   }
 
   /* Reduced motion support */
@@ -61,28 +29,6 @@
 }
 
 @layer utilities {
-  /* Vinyl-specific utilities */
-  .vinyl-groove {
-    background: radial-gradient(
-      circle,
-      transparent 30%,
-      rgba(255, 255, 255, 0.05) 31%,
-      transparent 32%,
-      rgba(255, 255, 255, 0.05) 33%,
-      transparent 34%
-    );
-    background-size: 8px 8px;
-  }
-
-  .vinyl-spin {
-    animation: spin var(--motion-spin);
-  }
-
-  @keyframes spin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-  }
-
   /* Screen reader only */
   .sr-only {
     position: absolute;
