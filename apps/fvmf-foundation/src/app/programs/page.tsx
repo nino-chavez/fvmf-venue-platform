@@ -131,8 +131,8 @@ export default function ProgramsPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {/* Songwriters Workshops */}
-              <div className="bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition-shadow">
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">
+              <div className="bg-white rounded-lg shadow-lg p-8 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 group">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors">
                   Songwriters Workshops & Performance Series
                 </h3>
                 <p className="text-gray-700 leading-relaxed mb-4">
@@ -144,8 +144,8 @@ export default function ProgramsPage() {
               </div>
 
               {/* Leland Bluebird Recording Sessions */}
-              <div className="bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition-shadow">
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">
+              <div className="bg-white rounded-lg shadow-lg p-8 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 group">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors">
                   The Leland Bluebird Recording Sessions
                 </h3>
                 <p className="text-gray-700 leading-relaxed mb-4">
@@ -157,8 +157,8 @@ export default function ProgramsPage() {
               </div>
 
               {/* Blues on the Fox */}
-              <div className="bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition-shadow md:col-span-2">
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">
+              <div className="bg-white rounded-lg shadow-lg p-8 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 group md:col-span-2">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors">
                   Blues on the Fox Workshops & Performances
                 </h3>
                 <p className="text-gray-700 leading-relaxed mb-4">

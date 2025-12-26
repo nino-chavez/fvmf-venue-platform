@@ -114,11 +114,11 @@ export default async function HomePage() {
               <div className="flex gap-6" style={{ width: 'max-content' }}>
                 {/* Event Card - Repeat 5-6 times */}
                 {[1, 2, 3, 4, 5].map((i) => (
-                  <div key={i} className="w-80 bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-                    <div className="h-48 bg-gradient-to-br from-blue-500 to-purple-600" />
+                  <div key={i} className="w-80 bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group">
+                    <div className="h-48 bg-gradient-to-br from-blue-500 to-purple-600 group-hover:scale-105 transition-transform duration-300" />
                     <div className="p-6">
                       <div className="text-sm text-blue-600 font-semibold mb-2">SAT, JAN 15 • 8:00 PM</div>
-                      <h3 className="text-xl font-bold text-gray-900 mb-2">Artist Name {i}</h3>
+                      <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">Artist Name {i}</h3>
                       <p className="text-gray-600 text-sm mb-4">Genre • $15-25</p>
                       <Button size="sm" className="w-full bg-blue-500 hover:bg-blue-600">
                         Get Tickets
@@ -159,39 +159,48 @@ export default async function HomePage() {
           </div>
         </section>
 
-        {/* Impact Numbers */}
+        {/* Impact Numbers - ENLARGED & ENHANCED */}
         {uniqueMetrics.length > 0 && (
-          <section className="py-20 bg-white">
+          <section className="py-32 bg-gradient-to-b from-white via-blue-50/30 to-white">
             <div className="container mx-auto px-4">
-              <h2 className="text-3xl sm:text-4xl font-bold text-center mb-4 text-gray-900">
+              <h2 className="text-4xl sm:text-5xl font-bold text-center mb-6 text-gray-900">
                 Making an Impact
               </h2>
-              <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+              <p className="text-center text-gray-600 text-xl mb-20 max-w-2xl mx-auto">
                 Every show supports music education. Every donation preserves our heritage.
               </p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 max-w-5xl mx-auto">
-                <div className="text-center">
-                  <div className="text-6xl sm:text-7xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-16 max-w-6xl mx-auto">
+                <div className="text-center group">
+                  <div className="text-8xl sm:text-9xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 bg-clip-text text-transparent mb-4 transition-transform duration-300 group-hover:scale-110">
                     700+
                   </div>
-                  <div className="text-lg text-gray-700 font-semibold">
-                    Shows
+                  <div className="text-xl text-gray-700 font-semibold uppercase tracking-wider">
+                    Shows Annually
+                  </div>
+                  <div className="mt-2 text-sm text-gray-500">
+                    Live performances at The Venue
                   </div>
                 </div>
-                <div className="text-center">
-                  <div className="text-6xl sm:text-7xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-3">
+                <div className="text-center group">
+                  <div className="text-8xl sm:text-9xl font-bold bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 bg-clip-text text-transparent mb-4 transition-transform duration-300 group-hover:scale-110">
                     107
                   </div>
-                  <div className="text-lg text-gray-700 font-semibold">
-                    Educational Programs Hosted
+                  <div className="text-xl text-gray-700 font-semibold uppercase tracking-wider">
+                    Educational Programs
+                  </div>
+                  <div className="mt-2 text-sm text-gray-500">
+                    Music education initiatives
                   </div>
                 </div>
-                <div className="text-center">
-                  <div className="text-6xl sm:text-7xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-3">
+                <div className="text-center group">
+                  <div className="text-8xl sm:text-9xl font-bold bg-gradient-to-r from-orange-500 via-red-500 to-orange-500 bg-clip-text text-transparent mb-4 transition-transform duration-300 group-hover:scale-110">
                     50K
                   </div>
-                  <div className="text-lg text-gray-700 font-semibold">
+                  <div className="text-xl text-gray-700 font-semibold uppercase tracking-wider">
                     Show Attendees
+                  </div>
+                  <div className="mt-2 text-sm text-gray-500">
+                    Community members reached
                   </div>
                 </div>
               </div>
