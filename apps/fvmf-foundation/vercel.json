@@ -1,5 +1,0 @@
-{
-  "framework": "nextjs",
-  "buildCommand": "npx turbo build --filter=fvmf-foundation...",
-  "outputDirectory": ".next"
-}
