@@ -82,36 +82,39 @@ export default function TheVenuePage() {
           </div>
         </section>
 
-        {/* Venue Info Grid */}
-        <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
+        {/* Venue Info Grid - Enhanced */}
+        <section className="py-24 bg-gradient-to-b from-gray-50 to-white">
           <div className="container mx-auto px-4">
-            <h2 className="text-3xl sm:text-4xl font-bold text-center mb-4 text-gray-900">
-              Venue Information
-            </h2>
-            <p className="text-center text-gray-600 mb-16 max-w-2xl mx-auto">
-              Everything you need to know about visiting The Venue
-            </p>
+            <div className="text-center mb-16">
+              <h2 className="text-4xl sm:text-5xl font-bold mb-4 text-gray-900">
+                Plan Your Visit
+              </h2>
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                Everything you need to know for an unforgettable experience at Downtown Aurora's premier listening room
+              </p>
+            </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-              {/* Location */}
-              <div className="group relative bg-white rounded-2xl shadow-md hover:shadow-2xl p-8 text-center transition-all duration-300 hover:-translate-y-2 border border-gray-100 overflow-hidden">
-                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-blue-600" />
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto mb-16">
+              {/* Location - Enhanced with more details */}
+              <div className="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl p-8 transition-all duration-300 hover:-translate-y-2 border border-gray-100 overflow-hidden">
+                <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-blue-500 to-blue-600" />
                 <div className="relative">
-                  <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-blue-500/30">
-                    <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-blue-500/30">
+                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                     </svg>
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">Location</h3>
-                  <p className="text-gray-600 leading-relaxed mb-4">
-                    21 S. Broadway<br />
-                    Aurora, IL 60505
-                  </p>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">Location</h3>
+                  <div className="space-y-3 text-gray-600 mb-6">
+                    <p className="font-semibold text-gray-900">21 S. Broadway<br />Aurora, IL 60505</p>
+                    <p className="text-sm">Historic Woolworth Building<br />Heart of Downtown Aurora</p>
+                    <p className="text-sm font-medium text-blue-600">Entrance on Water Street Mall (rear of building)</p>
+                  </div>
                   <Link
                     href="https://www.google.com/maps/place/21+S+Broadway,+Aurora,+IL+60505"
                     target="_blank"
-                    className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 text-sm font-semibold group/link"
+                    className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-semibold group/link"
                   >
                     <span>Get Directions</span>
                     <svg className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -121,54 +124,177 @@ export default function TheVenuePage() {
                 </div>
               </div>
 
-              {/* Capacity */}
-              <div className="group relative bg-white rounded-2xl shadow-md hover:shadow-2xl p-8 text-center transition-all duration-300 hover:-translate-y-2 border border-gray-100 overflow-hidden">
-                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-purple-500 to-purple-600" />
+              {/* Capacity - Enhanced with seating details */}
+              <div className="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl p-8 transition-all duration-300 hover:-translate-y-2 border border-gray-100 overflow-hidden">
+                <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-purple-500 to-purple-600" />
                 <div className="relative">
-                  <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-purple-500/30">
-                    <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-purple-500/30">
+                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                     </svg>
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">Capacity</h3>
-                  <p className="text-gray-600 leading-relaxed">
-                    Intimate listening room<br />
-                    General admission seating
-                  </p>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">Capacity</h3>
+                  <div className="space-y-3 text-gray-600 mb-6">
+                    <p className="font-semibold text-gray-900 text-lg">200 Seats</p>
+                    <p className="text-sm">Intimate listening room atmosphere</p>
+                    <p className="text-sm">General admission seating</p>
+                    <p className="text-sm">First-come, first-served basis</p>
+                  </div>
+                  <p className="text-sm text-purple-600 font-medium">Arrive early for best seats!</p>
                 </div>
               </div>
 
-              {/* Parking */}
-              <div className="group relative bg-white rounded-2xl shadow-md hover:shadow-2xl p-8 text-center transition-all duration-300 hover:-translate-y-2 border border-gray-100 overflow-hidden">
-                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-orange-500 to-orange-600" />
+              {/* Parking - Enhanced with specific locations */}
+              <div className="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl p-8 transition-all duration-300 hover:-translate-y-2 border border-gray-100 overflow-hidden">
+                <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-orange-500 to-orange-600" />
                 <div className="relative">
-                  <div className="w-20 h-20 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-orange-500/30">
-                    <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-orange-500/30">
+                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" />
                     </svg>
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">Parking</h3>
-                  <p className="text-gray-600 leading-relaxed">
-                    Convenient street parking<br />
-                    & nearby parking lots
-                  </p>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">Parking</h3>
+                  <div className="space-y-3 text-gray-600 mb-6">
+                    <p className="text-sm font-semibold text-gray-900">Free street parking on:</p>
+                    <ul className="text-sm space-y-1 list-disc list-inside">
+                      <li>Broadway (IL Route 25)</li>
+                      <li>Water Street</li>
+                      <li>Downer Place</li>
+                    </ul>
+                    <p className="text-sm">Public lots within 2 blocks</p>
+                    <p className="text-sm">Adjacent to Mundy Park</p>
+                  </div>
                 </div>
               </div>
 
-              {/* Accessibility */}
-              <div className="group relative bg-white rounded-2xl shadow-md hover:shadow-2xl p-8 text-center transition-all duration-300 hover:-translate-y-2 border border-gray-100 overflow-hidden">
-                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-green-500 to-green-600" />
+              {/* Accessibility - Enhanced with contact info */}
+              <div className="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl p-8 transition-all duration-300 hover:-translate-y-2 border border-gray-100 overflow-hidden">
+                <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-green-500 to-green-600" />
                 <div className="relative">
-                  <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-green-500/30">
-                    <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-green-500/30">
+                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                     </svg>
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">Accessibility</h3>
-                  <p className="text-gray-600 leading-relaxed">
-                    ADA accessible<br />
-                    Welcoming to all
-                  </p>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">Accessibility</h3>
+                  <div className="space-y-3 text-gray-600 mb-6">
+                    <p className="text-sm font-semibold text-gray-900">Fully ADA Compliant</p>
+                    <p className="text-sm">Wheelchair accessible entrance</p>
+                    <p className="text-sm">Accessible seating available</p>
+                    <p className="text-sm">Accessible restrooms</p>
+                  </div>
+                  <Link href="/accessibility" className="text-green-600 hover:text-green-700 text-sm font-semibold inline-flex items-center gap-1">
+                    Full accessibility info
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </Link>
+                </div>
+              </div>
+
+              {/* Amenities - NEW */}
+              <div className="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl p-8 transition-all duration-300 hover:-translate-y-2 border border-gray-100 overflow-hidden">
+                <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-pink-500 to-pink-600" />
+                <div className="relative">
+                  <div className="w-16 h-16 bg-gradient-to-br from-pink-500 to-pink-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-pink-500/30">
+                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                    </svg>
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">Amenities</h3>
+                  <div className="space-y-3 text-gray-600 mb-6">
+                    <p className="text-sm">State-of-the-art sound system</p>
+                    <p className="text-sm">Professional lighting</p>
+                    <p className="text-sm">Full bar service</p>
+                    <p className="text-sm">Merchandise area</p>
+                    <p className="text-sm">Climate controlled</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* What to Expect - NEW */}
+              <div className="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl p-8 transition-all duration-300 hover:-translate-y-2 border border-gray-100 overflow-hidden">
+                <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-indigo-500 to-indigo-600" />
+                <div className="relative">
+                  <div className="w-16 h-16 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-indigo-500/30">
+                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">What to Expect</h3>
+                  <div className="space-y-3 text-gray-600 mb-6">
+                    <p className="text-sm">Doors typically open 30 minutes before showtime</p>
+                    <p className="text-sm">Cash and card accepted</p>
+                    <p className="text-sm">Age restrictions vary by show</p>
+                    <p className="text-sm">Photography policies vary</p>
+                  </div>
+                  <Link href="/faqs" className="text-indigo-600 hover:text-indigo-700 text-sm font-semibold inline-flex items-center gap-1">
+                    View FAQs
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            {/* Quick Tips Banner */}
+            <div className="max-w-4xl mx-auto">
+              <div className="bg-gradient-to-r from-blue-50 to-purple-50 border border-blue-200 rounded-xl p-8">
+                <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">Insider Tips for Your Visit</h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="flex gap-4">
+                    <div className="flex-shrink-0">
+                      <div className="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center">
+                        <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                      </div>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-900 mb-1">Arrive Early</h4>
+                      <p className="text-sm text-gray-600">Best seats fill up fast! Come 30-45 minutes early for optimal viewing.</p>
+                    </div>
+                  </div>
+                  <div className="flex gap-4">
+                    <div className="flex-shrink-0">
+                      <div className="w-10 h-10 bg-purple-500 rounded-lg flex items-center justify-center">
+                        <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                        </svg>
+                      </div>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-900 mb-1">Support Artists</h4>
+                      <p className="text-sm text-gray-600">Browse artist merchandise and CDs available at most shows.</p>
+                    </div>
+                  </div>
+                  <div className="flex gap-4">
+                    <div className="flex-shrink-0">
+                      <div className="w-10 h-10 bg-green-500 rounded-lg flex items-center justify-center">
+                        <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" />
+                        </svg>
+                      </div>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-900 mb-1">Cash & Card Welcome</h4>
+                      <p className="text-sm text-gray-600">We accept both payment methods for tickets, drinks, and merchandise.</p>
+                    </div>
+                  </div>
+                  <div className="flex gap-4">
+                    <div className="flex-shrink-0">
+                      <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center">
+                        <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                        </svg>
+                      </div>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-900 mb-1">Explore Downtown</h4>
+                      <p className="text-sm text-gray-600">Discover restaurants, bars, and shops within walking distance.</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
