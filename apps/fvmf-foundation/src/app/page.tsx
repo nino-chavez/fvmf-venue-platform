@@ -2,6 +2,7 @@ import { Navigation } from '@/components/Navigation'
 import { Footer } from '@/components/Footer'
 import { Button } from '@/components/ui/Button'
 import { AnimatedCounter } from '@/components/AnimatedCounter'
+import { PhotoGallery } from '@/components/PhotoGallery'
 import Link from 'next/link'
 import Image from 'next/image'
 import { client, featuredProgramsQuery, featuredTestimonialsQuery, allImpactMetricsQuery } from '@/lib/sanity'
@@ -216,6 +217,48 @@ export default async function HomePage() {
             </div>
           </section>
         )}
+
+        {/* The Venue - Photo Gallery */}
+        <section className="py-20 bg-gray-900">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
+                Experience The Venue
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                An intimate 200-seat listening room in the heart of downtown Aurora.
+                Historic Woolworth Building transformed into a state-of-the-art performance space.
+              </p>
+            </div>
+
+            <PhotoGallery
+              columns={3}
+              photos={[
+                {
+                  src: '/images/venue-photo.jpg',
+                  alt: 'The Venue interior',
+                  caption: 'Intimate 200-seat listening room'
+                },
+                {
+                  src: '/images/hero-music-background.png',
+                  alt: 'Live performance at The Venue',
+                  caption: 'World-class artists on our stage'
+                },
+                {
+                  src: '/images/venue-photo.jpg',
+                  alt: 'The Venue stage',
+                  caption: 'State-of-the-art sound and lighting'
+                }
+              ]}
+            />
+
+            <div className="text-center mt-12">
+              <Button size="lg" className="bg-blue-500 hover:bg-blue-600" asChild>
+                <Link href="/the-venue">Explore The Venue</Link>
+              </Button>
+            </div>
+          </div>
+        </section>
 
         {/* Testimonials */}
         <section className="bg-gray-900 py-20">
