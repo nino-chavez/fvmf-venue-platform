@@ -152,6 +152,24 @@ SANITY_API_TOKEN=skIBfGWUTzyq6GaDnYRGF5LYD6KHjK4Sw6SyszibKrAGx5RpFkfVHMBFfFIO7vU
 
 ## Migration History
 
+### December 27, 2025 - Separated Card and Hero Images
+
+**Schema Update:**
+- Split single `featuredImage` field into two separate fields:
+  - `cardImage` (required) - Used in news listing cards (600×400px, 3:2 ratio)
+  - `heroImage` (optional) - Used in post detail hero section (1920×1080px, 16:9 ratio)
+
+**Benefits:**
+- Content creators can optimize each image for its specific use case
+- Card images can be cropped differently than hero images
+- Better control over visual presentation in different contexts
+- Clearer guidance in Sanity Studio about image purposes
+
+**Frontend Updates:**
+- Updated `src/app/news-updates/page.tsx` to use `cardImage`
+- Updated `src/app/news-updates/[slug]/page.tsx` to use `heroImage`
+- Updated IMAGE_GUIDELINES.md with separate sections for each image type
+
 ### December 27, 2025 - Consolidated to Single Dataset
 
 **Before:**

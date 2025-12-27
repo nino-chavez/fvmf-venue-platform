@@ -10,7 +10,7 @@ interface Post {
   title: string
   slug: { current: string }
   excerpt: string
-  featuredImage?: {
+  cardImage?: {
     asset: any
     alt: string
   }
@@ -19,13 +19,24 @@ interface Post {
   featured: boolean
 }
 
-async function getPosts() {
-  const query = `*[_type == "post" && contentType == "foundation"] | order(publishedAt desc) {
+interface PageProps {
+  searchParams: Promise<{
+    page?: string
+  }>
+}
+
+const POSTS_PER_PAGE = 9
+
+async function getPosts(page: number = 1) {
+  const start = (page - 1) * POSTS_PER_PAGE
+  const end = start + POSTS_PER_PAGE
+
+  const query = `*[_type == "post" && contentType == "foundation"] | order(publishedAt desc) [${start}...${end}] {
     _id,
     title,
     slug,
     excerpt,
-    featuredImage,
+    cardImage,
     category,
     publishedAt,
     featured
@@ -34,13 +45,18 @@ async function getPosts() {
   return await client.fetch<Post[]>(query)
 }
 
+async function getTotalPosts() {
+  const query = `count(*[_type == "post" && contentType == "foundation"])`
+  return await client.fetch<number>(query)
+}
+
 async function getFeaturedPosts() {
   const query = `*[_type == "post" && contentType == "foundation" && featured == true] | order(publishedAt desc)[0...3] {
     _id,
     title,
     slug,
     excerpt,
-    featuredImage,
+    cardImage,
     category,
     publishedAt,
     featured
@@ -73,13 +89,18 @@ function formatDate(date: string) {
   })
 }
 
-export default async function NewsUpdatesPage() {
-  const [featuredPosts, allPosts] = await Promise.all([
+export default async function NewsUpdatesPage({ searchParams }: PageProps) {
+  const { page } = await searchParams
+  const currentPage = parseInt(page || '1')
+
+  const [featuredPosts, allPosts, totalPosts] = await Promise.all([
     getFeaturedPosts(),
-    getPosts(),
+    getPosts(currentPage),
+    getTotalPosts(),
   ])
 
   const regularPosts = allPosts.filter(post => !post.featured)
+  const totalPages = Math.ceil(totalPosts / POSTS_PER_PAGE)
 
   return (
     <>
@@ -110,12 +131,13 @@ export default async function NewsUpdatesPage() {
                     href={`/news-updates/${post.slug.current}`}
                     className="group bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-1"
                   >
-                    {post.featuredImage && (
+                    {post.cardImage && (
                       <div className="relative h-56 overflow-hidden">
                         <Image
-                          src={urlFor(post.featuredImage).width(600).height(400).url()}
-                          alt={post.featuredImage.alt || post.title}
+                          src={urlFor(post.cardImage).width(600).height(400).url()}
+                          alt={post.cardImage.alt || post.title}
                           fill
+                          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                           className="object-cover group-hover:scale-105 transition-transform duration-300"
                         />
                         <div className="absolute top-4 left-4">
@@ -150,38 +172,91 @@ export default async function NewsUpdatesPage() {
                 <p className="text-gray-500">Check back soon for updates!</p>
               </div>
             ) : (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {regularPosts.map((post) => (
-                  <Link
-                    key={post._id}
-                    href={`/news-updates/${post.slug.current}`}
-                    className="group bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-100"
-                  >
-                    {post.featuredImage && (
-                      <div className="relative h-48 overflow-hidden">
-                        <Image
-                          src={urlFor(post.featuredImage).width(600).height(400).url()}
-                          alt={post.featuredImage.alt || post.title}
-                          fill
-                          className="object-cover group-hover:scale-105 transition-transform duration-300"
-                        />
-                        <div className="absolute top-4 left-4">
-                          <span className={`inline-block px-3 py-1 rounded-full text-sm font-semibold ${categoryColors[post.category] || 'bg-gray-100 text-gray-800'}`}>
-                            {categoryLabels[post.category] || post.category}
-                          </span>
+              <>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                  {regularPosts.map((post) => (
+                    <Link
+                      key={post._id}
+                      href={`/news-updates/${post.slug.current}`}
+                      className="group bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-100"
+                    >
+                      {post.cardImage && (
+                        <div className="relative h-48 overflow-hidden">
+                          <Image
+                            src={urlFor(post.cardImage).width(600).height(400).url()}
+                            alt={post.cardImage.alt || post.title}
+                            fill
+                            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                            className="object-cover group-hover:scale-105 transition-transform duration-300"
+                          />
+                          <div className="absolute top-4 left-4">
+                            <span className={`inline-block px-3 py-1 rounded-full text-sm font-semibold ${categoryColors[post.category] || 'bg-gray-100 text-gray-800'}`}>
+                              {categoryLabels[post.category] || post.category}
+                            </span>
+                          </div>
                         </div>
+                      )}
+                      <div className="p-6">
+                        <p className="text-sm text-gray-500 mb-2">{formatDate(post.publishedAt)}</p>
+                        <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
+                          {post.title}
+                        </h3>
+                        <p className="text-gray-600 leading-relaxed line-clamp-3">{post.excerpt}</p>
                       </div>
+                    </Link>
+                  ))}
+                </div>
+
+                {/* Pagination */}
+                {totalPages > 1 && (
+                  <div className="mt-12 flex justify-center items-center gap-2">
+                    {/* Previous Button */}
+                    {currentPage > 1 ? (
+                      <Link
+                        href={`/news-updates?page=${currentPage - 1}`}
+                        className="px-4 py-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition-colors"
+                      >
+                        Previous
+                      </Link>
+                    ) : (
+                      <span className="px-4 py-2 rounded-lg bg-gray-200 text-gray-400 cursor-not-allowed">
+                        Previous
+                      </span>
                     )}
-                    <div className="p-6">
-                      <p className="text-sm text-gray-500 mb-2">{formatDate(post.publishedAt)}</p>
-                      <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
-                        {post.title}
-                      </h3>
-                      <p className="text-gray-600 leading-relaxed line-clamp-3">{post.excerpt}</p>
+
+                    {/* Page Numbers */}
+                    <div className="flex gap-2">
+                      {Array.from({ length: totalPages }, (_, i) => i + 1).map((pageNum) => (
+                        <Link
+                          key={pageNum}
+                          href={`/news-updates?page=${pageNum}`}
+                          className={`px-4 py-2 rounded-lg transition-colors ${
+                            pageNum === currentPage
+                              ? 'bg-blue-600 text-white'
+                              : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                          }`}
+                        >
+                          {pageNum}
+                        </Link>
+                      ))}
                     </div>
-                  </Link>
-                ))}
-              </div>
+
+                    {/* Next Button */}
+                    {currentPage < totalPages ? (
+                      <Link
+                        href={`/news-updates?page=${currentPage + 1}`}
+                        className="px-4 py-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition-colors"
+                      >
+                        Next
+                      </Link>
+                    ) : (
+                      <span className="px-4 py-2 rounded-lg bg-gray-200 text-gray-400 cursor-not-allowed">
+                        Next
+                      </span>
+                    )}
+                  </div>
+                )}
+              </>
             )}
           </div>
         </section>

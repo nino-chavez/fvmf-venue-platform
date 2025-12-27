@@ -18,7 +18,7 @@ async function getPost(slug: string) {
     _id,
     title,
     excerpt,
-    featuredImage,
+    heroImage,
     category,
     tags,
     content,
@@ -67,15 +67,16 @@ export default async function PostPage({ params }: PostProps) {
       <Navigation />
 
       <main className="min-h-screen bg-white">
-        {/* Hero Section with Featured Image */}
-        {post.featuredImage && (
-          <section className="relative h-[500px] bg-gray-900">
+        {/* Hero Section with Hero Image */}
+        {post.heroImage && (
+          <section className="relative h-[400px] sm:h-[500px] lg:h-[600px] bg-gray-900">
             <div className="absolute inset-0">
               <Image
-                src={urlFor(post.featuredImage).width(1920).height(500).url()}
-                alt={post.featuredImage.alt || post.title}
+                src={urlFor(post.heroImage).width(1920).height(1080).url()}
+                alt={post.heroImage.alt || post.title}
                 fill
-                className="object-cover"
+                sizes="100vw"
+                className="object-cover object-center"
                 priority
               />
               <div className="absolute inset-0 bg-gradient-to-b from-gray-900/60 via-gray-900/40 to-gray-900/80" />
@@ -104,7 +105,7 @@ export default async function PostPage({ params }: PostProps) {
         {/* Article Content */}
         <article className="py-16 bg-white">
           <div className="container mx-auto px-4 max-w-4xl">
-            {!post.featuredImage && (
+            {!post.heroImage && (
               <header className="mb-12">
                 <div className="mb-4">
                   <span className={`inline-block px-4 py-2 rounded-full text-sm font-semibold ${categoryColors[post.category] || 'bg-gray-100 text-gray-800'}`}>

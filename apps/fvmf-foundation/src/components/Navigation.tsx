@@ -36,7 +36,7 @@ export function Navigation() {
             width={139}
             height={44}
             priority
-            className="h-11 w-auto"
+            style={{ height: '2.75rem', width: 'auto' }}
           />
           <span className="text-xs text-gray-600 mt-1">Preserve • Promote • Protect • Present</span>
         </Link>
