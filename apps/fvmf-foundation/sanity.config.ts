@@ -18,6 +18,29 @@ export default defineConfig({
         S.list()
           .title('Content')
           .items([
+            // Content Management Section
+            S.listItem()
+              .title('News & Updates')
+              .icon(() => '📰')
+              .child(
+                S.documentList()
+                  .title('News & Updates')
+                  .filter('_type == "post"')
+                  .defaultOrdering([{ field: 'publishedAt', direction: 'desc' }])
+              ),
+
+            S.listItem()
+              .title('Pages')
+              .icon(() => '📄')
+              .child(
+                S.documentList()
+                  .title('Pages')
+                  .filter('_type == "page"')
+              ),
+
+            S.divider(),
+
+            // Programs Section
             S.listItem()
               .title('Programs')
               .icon(() => '🎵')
@@ -38,6 +61,7 @@ export default defineConfig({
 
             S.divider(),
 
+            // Organization Section
             S.listItem()
               .title('Team')
               .icon(() => '👥')
@@ -47,8 +71,6 @@ export default defineConfig({
                   .filter('_type == "teamMember"')
                   .defaultOrdering([{ field: 'order', direction: 'asc' }])
               ),
-
-            S.divider(),
 
             S.listItem()
               .title('Annual Reports')
