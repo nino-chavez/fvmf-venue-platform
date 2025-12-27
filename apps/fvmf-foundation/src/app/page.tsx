@@ -243,46 +243,74 @@ export default async function HomePage() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {/* Venue Interior Photo */}
-              <Link href="/the-venue" className="relative aspect-[4/3] overflow-hidden rounded-lg bg-gray-100 group cursor-pointer block">
+              <Link href="/the-venue" className="relative aspect-[4/3] overflow-hidden rounded-xl bg-gray-900 group cursor-pointer block shadow-lg hover:shadow-2xl transition-shadow duration-300">
                 <Image
                   src="/images/venue-photo.jpg"
                   alt="The Venue interior - intimate 200-seat listening room"
                   fill
-                  className="object-cover transition-transform duration-300 group-hover:scale-110"
+                  className="object-cover transition-all duration-500 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <p className="text-white text-sm font-medium">Intimate 200-seat listening room</p>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-300" />
+                <div className="absolute inset-0 flex flex-col justify-end p-6">
+                  <div className="transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                    <div className="flex items-center gap-2 mb-2">
+                      <svg className="w-5 h-5 text-blue-400" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" />
+                      </svg>
+                      <span className="text-blue-400 text-xs font-semibold uppercase tracking-wide">The Venue</span>
+                    </div>
+                    <h3 className="text-white text-lg font-bold mb-1">Intimate Listening Room</h3>
+                    <p className="text-white/80 text-sm">200-seat capacity • Downtown Aurora</p>
+                  </div>
                 </div>
               </Link>
 
               {/* Live Performance Hero */}
-              <Link href="/the-venue" className="relative aspect-[4/3] overflow-hidden rounded-lg bg-gray-100 group cursor-pointer block">
+              <Link href="/the-venue" className="relative aspect-[4/3] overflow-hidden rounded-xl bg-gray-900 group cursor-pointer block shadow-lg hover:shadow-2xl transition-shadow duration-300">
                 <Image
                   src="/images/hero-music-background.png"
                   alt="Live performance at The Venue"
                   fill
-                  className="object-cover transition-transform duration-300 group-hover:scale-110"
+                  className="object-cover transition-all duration-500 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <p className="text-white text-sm font-medium">World-class artists on our stage</p>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-300" />
+                <div className="absolute inset-0 flex flex-col justify-end p-6">
+                  <div className="transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                    <div className="flex items-center gap-2 mb-2">
+                      <svg className="w-5 h-5 text-orange-400" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M5 2a1 1 0 011 1v1h1a1 1 0 010 2H6v1a1 1 0 01-2 0V6H3a1 1 0 010-2h1V3a1 1 0 011-1zm0 10a1 1 0 011 1v1h1a1 1 0 110 2H6v1a1 1 0 11-2 0v-1H3a1 1 0 110-2h1v-1a1 1 0 011-1zM12 2a1 1 0 01.967.744L14.146 7.2 17.5 9.134a1 1 0 010 1.732l-3.354 1.935-1.18 4.455a1 1 0 01-1.933 0L9.854 12.8 6.5 10.866a1 1 0 010-1.732l3.354-1.935 1.18-4.455A1 1 0 0112 2z" clipRule="evenodd" />
+                      </svg>
+                      <span className="text-orange-400 text-xs font-semibold uppercase tracking-wide">Live Music</span>
+                    </div>
+                    <h3 className="text-white text-lg font-bold mb-1">World-Class Artists</h3>
+                    <p className="text-white/80 text-sm">700+ shows annually • All genres</p>
+                  </div>
                 </div>
               </Link>
 
               {/* State-of-the-art Visual */}
-              <div className="relative aspect-[4/3] overflow-hidden rounded-lg group">
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-600 via-purple-600 to-orange-500" />
-                <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48cGF0dGVybiBpZD0iZ3JpZCIgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIj48cGF0aCBkPSJNIDQwIDAgTCAwIDAgMCA0MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLW9wYWNpdHk9IjAuMSIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+')] opacity-30" />
-                <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center">
-                  <svg className="w-16 h-16 text-white/90 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3" />
-                  </svg>
-                  <h3 className="text-xl font-bold text-white mb-2">State-of-the-Art</h3>
-                  <p className="text-white/90 text-sm">Professional sound & lighting system</p>
+              <Link href="/the-venue" className="relative aspect-[4/3] overflow-hidden rounded-xl group cursor-pointer block shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-600 via-blue-600 to-orange-500" />
+                <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48cGF0dGVybiBpZD0iZ3JpZCIgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIj48cGF0aCBkPSJNIDQwIDAgTCAwIDAgMCA0MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLW9wYWNpdHk9IjAuMSIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+')] opacity-20" />
+                <div className="absolute inset-0 flex flex-col justify-end p-6">
+                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transform group-hover:scale-110 transition-transform duration-300">
+                    <svg className="w-20 h-20 text-white/90 drop-shadow-lg" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3" />
+                    </svg>
+                  </div>
+                  <div className="transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                    <div className="flex items-center gap-2 mb-2">
+                      <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clipRule="evenodd" />
+                      </svg>
+                      <span className="text-white text-xs font-semibold uppercase tracking-wide">Technology</span>
+                    </div>
+                    <h3 className="text-white text-lg font-bold mb-1">State-of-the-Art</h3>
+                    <p className="text-white/90 text-sm">Professional sound & lighting</p>
+                  </div>
                 </div>
                 <div className="absolute bottom-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-700" />
-              </div>
+              </Link>
             </div>
 
             <div className="text-center mt-12">
