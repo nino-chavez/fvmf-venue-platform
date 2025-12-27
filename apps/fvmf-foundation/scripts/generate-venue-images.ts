@@ -87,7 +87,7 @@ async function generateImage(imagePrompt: ImagePrompt): Promise<void> {
         'X-Title': 'FVMF Image Generator'
       },
       body: JSON.stringify({
-        model: 'black-forest-labs/flux-1.1-pro', // High-quality image generation
+        model: 'openai/dall-e-3', // High-quality image generation
         messages: [
           {
             role: 'user',

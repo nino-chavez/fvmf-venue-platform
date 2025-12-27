@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "generate:images": "tsx scripts/generate-venue-images.ts"
+    "generate:images": "tsx scripts/generate-venue-images.ts",
+    "download:images": "tsx scripts/download-unsplash-images.ts"
   },
   "dependencies": {
     "@sanity/client": "^7.13.2",
