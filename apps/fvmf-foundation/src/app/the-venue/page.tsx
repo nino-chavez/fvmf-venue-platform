@@ -2,6 +2,7 @@ import { Navigation } from '@/components/Navigation'
 import { Footer } from '@/components/Footer'
 import { Button } from '@/components/ui/Button'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function TheVenuePage() {
   return (
@@ -11,8 +12,17 @@ export default function TheVenuePage() {
       <main className="min-h-screen bg-white">
         {/* Hero Section */}
         <section className="relative h-[600px] bg-gray-900">
-          {/* Photo Background - TODO: Replace with real venue photo */}
-          <div className="absolute inset-0 bg-gradient-to-b from-blue-900/80 via-purple-900/60 to-gray-900/90" />
+          {/* Real Venue Photo Background */}
+          <div className="absolute inset-0">
+            <Image
+              src="https://static.wixstatic.com/media/05fab7_b3cc438490214835904cd186b4842b7c~mv2.jpg/v1/fill/w_2048,h_1187,al_c,q_90,enc_avif,quality_auto/05fab7_b3cc438490214835904cd186b4842b7c~mv2.jpg"
+              alt="Live music performance at The Venue"
+              fill
+              className="object-cover"
+              priority
+            />
+            <div className="absolute inset-0 bg-gradient-to-b from-blue-900/80 via-purple-900/60 to-gray-900/90" />
+          </div>
 
           <div className="relative h-full flex flex-col items-center justify-center px-4 text-center">
             <div className="inline-block bg-orange-500 text-white text-sm font-bold px-4 py-2 mb-6">
@@ -78,6 +88,82 @@ export default function TheVenuePage() {
                   </Link>
                 </Button>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Programs & Community */}
+        <section className="py-20 bg-white">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
+                More Than Just a Venue
+              </h2>
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                Every show supports music education, preservation, and community programs across the Fox Valley
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+              {/* She Said Series */}
+              <div className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300">
+                <div className="relative h-80">
+                  <Image
+                    src="https://static.wixstatic.com/media/05fab7_4c1ccfc78bc64426a0d6d63f0f4eb2db~mv2.png/v1/crop/x_12,y_4,w_305,h_320/fill/w_427,h_447,al_c,lg_1,q_85,enc_avif,quality_auto/She%20Said%20show%20cards%20image.png"
+                    alt="She Said: Celebrating Women in Music series"
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                <div className="p-6 bg-gradient-to-b from-white to-purple-50">
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">"She Said..." Series</h3>
+                  <p className="text-gray-600 text-sm">Celebrating women in music with performances and conversations</p>
+                </div>
+              </div>
+
+              {/* Delmark Day */}
+              <div className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300">
+                <div className="relative h-80">
+                  <Image
+                    src="https://static.wixstatic.com/media/05fab7_6c7ece975d1a45dd99765eebe5fc5be3~mv2.png/v1/fill/w_848,h_610,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/FVMF_VENUE_DELMARK_LMS_final.png"
+                    alt="Delmark Day & Masterclass Series honoring the Blues"
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                <div className="p-6 bg-gradient-to-b from-white to-blue-50">
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">Delmark Day</h3>
+                  <p className="text-gray-600 text-sm">Honoring the blues tradition with masterclasses and performances</p>
+                </div>
+              </div>
+
+              {/* Pete Ellman Big Band */}
+              <div className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300">
+                <div className="relative h-80">
+                  <Image
+                    src="https://static.wixstatic.com/media/05fab7_4f1dd1cdf485436386b140e2bdfa5e30~mv2.jpg/v1/crop/x_267,y_0,w_1511,h_1152/fill/w_850,h_648,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/pete%20ellman%202.jpg"
+                    alt="Pete Ellman Big Band Residency with student musicians"
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                <div className="p-6 bg-gradient-to-b from-white to-orange-50">
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">Weekly Residency</h3>
+                  <p className="text-gray-600 text-sm">Pete Ellman Big Band mentoring the next generation of jazz musicians</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="text-center mt-12">
+              <Link
+                href="/programs"
+                className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-semibold text-lg group"
+              >
+                Explore All Programs
+                <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </Link>
             </div>
           </div>
         </section>
