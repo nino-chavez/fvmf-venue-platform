@@ -8,9 +8,9 @@ import { PortableText } from '@portabletext/react'
 import { urlFor } from '@/lib/sanity/image'
 
 interface PostProps {
-  params: {
+  params: Promise<{
     slug: string
-  }
+  }>
 }
 
 async function getPost(slug: string) {
@@ -55,7 +55,8 @@ function formatDate(date: string) {
 }
 
 export default async function PostPage({ params }: PostProps) {
-  const post = await getPost(params.slug)
+  const { slug } = await params
+  const post = await getPost(slug)
 
   if (!post) {
     notFound()

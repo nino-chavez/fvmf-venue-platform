@@ -9,9 +9,9 @@ import { PortableText } from '@portabletext/react'
 import { urlFor } from '@/lib/sanity/image'
 
 interface PageProps {
-  params: {
+  params: Promise<{
     slug: string
-  }
+  }>
 }
 
 async function getPage(slug: string) {
@@ -30,7 +30,8 @@ async function getPage(slug: string) {
 }
 
 export default async function PageRoute({ params }: PageProps) {
-  const page = await getPage(params.slug)
+  const { slug } = await params
+  const page = await getPage(slug)
 
   if (!page) {
     notFound()
