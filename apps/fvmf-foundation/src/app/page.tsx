@@ -243,10 +243,7 @@ export default async function HomePage() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {/* Venue Interior Photo */}
-              <button
-                className="relative aspect-[4/3] overflow-hidden rounded-lg bg-gray-100 group cursor-pointer"
-                onClick={() => window.open('/the-venue', '_self')}
-              >
+              <Link href="/the-venue" className="relative aspect-[4/3] overflow-hidden rounded-lg bg-gray-100 group cursor-pointer block">
                 <Image
                   src="/images/venue-photo.jpg"
                   alt="The Venue interior - intimate 200-seat listening room"
@@ -257,13 +254,10 @@ export default async function HomePage() {
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <p className="text-white text-sm font-medium">Intimate 200-seat listening room</p>
                 </div>
-              </button>
+              </Link>
 
               {/* Live Performance Hero */}
-              <button
-                className="relative aspect-[4/3] overflow-hidden rounded-lg bg-gray-100 group cursor-pointer"
-                onClick={() => window.open('/the-venue', '_self')}
-              >
+              <Link href="/the-venue" className="relative aspect-[4/3] overflow-hidden rounded-lg bg-gray-100 group cursor-pointer block">
                 <Image
                   src="/images/hero-music-background.png"
                   alt="Live performance at The Venue"
@@ -274,7 +268,7 @@ export default async function HomePage() {
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <p className="text-white text-sm font-medium">World-class artists on our stage</p>
                 </div>
-              </button>
+              </Link>
 
               {/* State-of-the-art Visual */}
               <div className="relative aspect-[4/3] overflow-hidden rounded-lg group">
