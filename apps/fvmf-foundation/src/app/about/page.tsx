@@ -1,6 +1,7 @@
 import { Navigation } from '@/components/Navigation'
 import { Footer } from '@/components/Footer'
 import { Button } from '@/components/ui/Button'
+import { Timeline } from '@/components/Timeline'
 import Link from 'next/link'
 import Image from 'next/image'
 
@@ -131,6 +132,53 @@ export default function AboutPage() {
               <p className="text-lg text-gray-700 leading-relaxed mb-12">
                 Blues, Rock & Roll, Gospel, Metal, Classical…it's all here in some form, shape or fashion. Artists, venues, organizations, retailers and enthusiasts of all kind are scattered throughout the Fox Valley area. It's our mission and sincere desire to ensure this rich musical history and the artists responsible for it are seen and heard, both now and in the future.
               </p>
+
+              {/* Visual Timeline */}
+              <div className="my-16">
+                <h3 className="text-2xl font-bold text-center text-gray-900 mb-12">Our Journey</h3>
+                <Timeline
+                  events={[
+                    {
+                      year: '1937',
+                      title: 'Leland Hotel Bluebird Sessions',
+                      description: 'Over 320 recordings made at the Sky Club of the Leland Hotel, featuring top Chicago and St. Louis Blues artists.',
+                      highlight: true
+                    },
+                    {
+                      year: '2004',
+                      title: 'Blues On The Fox Festival Begins',
+                      description: 'The festival launches in downtown Aurora, celebrating the rediscovery of the Bluebird Sessions legacy.'
+                    },
+                    {
+                      year: '2010',
+                      title: 'Festival Transitions to Paramount',
+                      description: 'Aurora Civic Center Authority and Paramount Theatre take leadership while volunteers remain deeply involved.'
+                    },
+                    {
+                      year: '2013',
+                      title: 'RiverEdge Park Opens',
+                      description: 'BOTF festival moves to the new RiverEdge Park, with Dr. John and Buddy Guy headlining the inaugural event.'
+                    },
+                    {
+                      year: '2014',
+                      title: 'FVMF Becomes 501(c)(3)',
+                      description: 'The volunteer group officially becomes Fox Valley Music Foundation, dedicated to preserving and promoting music.',
+                      highlight: true
+                    },
+                    {
+                      year: '2019',
+                      title: 'The Venue Opens',
+                      description: 'The 200-seat listening room opens in the historic Woolworth Building at 21 S. Broadway in downtown Aurora.',
+                      highlight: true
+                    },
+                    {
+                      year: 'Today',
+                      title: '700+ Shows Annually',
+                      description: 'FVMF and The Venue continue to serve the community with hundreds of performances and educational programs each year.'
+                    }
+                  ]}
+                />
+              </div>
 
               {/* The Bluebird Legacy */}
               <div className="bg-blue-50 border-l-4 border-blue-600 p-8 mb-12">

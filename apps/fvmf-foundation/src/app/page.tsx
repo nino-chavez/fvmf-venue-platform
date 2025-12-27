@@ -1,6 +1,7 @@
 import { Navigation } from '@/components/Navigation'
 import { Footer } from '@/components/Footer'
 import { Button } from '@/components/ui/Button'
+import { AnimatedCounter } from '@/components/AnimatedCounter'
 import Link from 'next/link'
 import Image from 'next/image'
 import { client, featuredProgramsQuery, featuredTestimonialsQuery, allImpactMetricsQuery } from '@/lib/sanity'
@@ -171,9 +172,12 @@ export default async function HomePage() {
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-16 max-w-6xl mx-auto">
                 <div className="text-center group">
-                  <div className="text-8xl sm:text-9xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 bg-clip-text text-transparent mb-4 transition-transform duration-300 group-hover:scale-110">
-                    700+
-                  </div>
+                  <AnimatedCounter
+                    value={700}
+                    suffix="+"
+                    duration={2500}
+                    className="text-8xl sm:text-9xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 bg-clip-text text-transparent mb-4 transition-transform duration-300 group-hover:scale-110"
+                  />
                   <div className="text-xl text-gray-700 font-semibold uppercase tracking-wider">
                     Shows Annually
                   </div>
@@ -182,9 +186,11 @@ export default async function HomePage() {
                   </div>
                 </div>
                 <div className="text-center group">
-                  <div className="text-8xl sm:text-9xl font-bold bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 bg-clip-text text-transparent mb-4 transition-transform duration-300 group-hover:scale-110">
-                    107
-                  </div>
+                  <AnimatedCounter
+                    value={107}
+                    duration={2000}
+                    className="text-8xl sm:text-9xl font-bold bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 bg-clip-text text-transparent mb-4 transition-transform duration-300 group-hover:scale-110"
+                  />
                   <div className="text-xl text-gray-700 font-semibold uppercase tracking-wider">
                     Educational Programs
                   </div>
@@ -193,9 +199,12 @@ export default async function HomePage() {
                   </div>
                 </div>
                 <div className="text-center group">
-                  <div className="text-8xl sm:text-9xl font-bold bg-gradient-to-r from-orange-500 via-red-500 to-orange-500 bg-clip-text text-transparent mb-4 transition-transform duration-300 group-hover:scale-110">
-                    50K
-                  </div>
+                  <AnimatedCounter
+                    value={50000}
+                    suffix="+"
+                    duration={3000}
+                    className="text-8xl sm:text-9xl font-bold bg-gradient-to-r from-orange-500 via-red-500 to-orange-500 bg-clip-text text-transparent mb-4 transition-transform duration-300 group-hover:scale-110"
+                  />
                   <div className="text-xl text-gray-700 font-semibold uppercase tracking-wider">
                     Show Attendees
                   </div>
