@@ -63,6 +63,11 @@ export default function ProgramsPage() {
                 <p className="text-xl font-semibold text-blue-600 mb-6">
                   Empowering women. Elevating artistry. Expanding the stage.
                 </p>
+                <Button size="lg" className="bg-blue-600 hover:bg-blue-700" asChild>
+                  <Link href="https://www.foxvalleymusicfoundation.com/she-said-performance-series" target="_blank">
+                    Learn More About She Said →
+                  </Link>
+                </Button>
               </div>
               <div className="order-1 lg:order-2 relative bg-gradient-to-br from-purple-500 to-pink-600 rounded-lg h-96 overflow-hidden group">
                 <div className="absolute inset-0 bg-black/20" />
@@ -92,9 +97,14 @@ export default function ProgramsPage() {
                 <p className="text-lg text-gray-700 leading-relaxed mb-8">
                   Past events have included masterclass instruction from Sheryl Youngblood, Bob Stroger, and Billy Flynn, with performances by veteran artists Demetria Taylor, Bob Stroger & Friends, and up-and-coming groups Patch of Blues and Knott Us Band.
                 </p>
-                <p className="text-xl font-semibold text-blue-600">
+                <p className="text-xl font-semibold text-blue-600 mb-6">
                   Delmark Day reminds us where the music came from - and why it still matters.
                 </p>
+                <Button size="lg" className="bg-blue-600 hover:bg-blue-700" asChild>
+                  <Link href="https://www.foxvalleymusicfoundation.com/delmark-day-masterclass-series" target="_blank">
+                    Learn More About Delmark Day →
+                  </Link>
+                </Button>
               </div>
             </div>
           </div>
@@ -114,9 +124,14 @@ export default function ProgramsPage() {
                 <p className="text-lg text-gray-700 leading-relaxed mb-8">
                   More than 300 patrons from a variety of organizations, including Fox Valley Special Recreation Association, Western DuPage Special Recreation Association, Blackhawk Academy, and Association for Individual Development have taken part in these events.
                 </p>
-                <p className="text-xl font-semibold text-blue-600">
+                <p className="text-xl font-semibold text-blue-600 mb-6">
                   A space where accessibility, creativity, and community come together through the power of music.
                 </p>
+                <Button size="lg" className="bg-blue-600 hover:bg-blue-700" asChild>
+                  <Link href="https://www.foxvalleymusicfoundation.com/rhythms-for-all-series" target="_blank">
+                    Learn More About Rhythms For All →
+                  </Link>
+                </Button>
               </div>
               <div className="order-1 lg:order-2 relative bg-gradient-to-br from-orange-500 to-red-600 rounded-lg h-96 overflow-hidden group">
                 <div className="absolute inset-0 bg-black/20" />
@@ -143,9 +158,14 @@ export default function ProgramsPage() {
                 <p className="text-lg text-gray-700 leading-relaxed mb-8">
                   Each week throughout the school year, The Venue hosts the Pete Ellman Big Band residency. Student jazz groups featuring musicians ranging from middle school to college-age gain real-world experience on stage, while audiences experience the joy of discovering the next wave of local jazz talent.
                 </p>
-                <p className="text-xl font-semibold text-blue-600">
+                <p className="text-xl font-semibold text-blue-600 mb-6">
                   Where mentorship meets music - and the future takes the stage.
                 </p>
+                <Button size="lg" className="bg-blue-600 hover:bg-blue-700" asChild>
+                  <Link href="https://www.foxvalleymusicfoundation.com/pebb-weekly-residency" target="_blank">
+                    Learn More About PEBB Residency →
+                  </Link>
+                </Button>
               </div>
             </div>
           </div>
@@ -167,9 +187,19 @@ export default function ProgramsPage() {
                 <p className="text-gray-700 leading-relaxed mb-4">
                   The Fox Valley Music Foundation teamed up with two local libraries to offer insight into what makes a songwriter create a song. The 2016 Summer Songwriter Workshop and Performance Series featured six local professional songwriters who described their craft and performed before an audience at the local library.
                 </p>
-                <p className="text-gray-700 leading-relaxed">
+                <p className="text-gray-700 leading-relaxed mb-6">
                   Each show in this free series featured a one-hour songwriting workshop led by the artist and was directly followed by a sixty-minute live performance. The West Branch of the Aurora Public Library and The Batavia Public Library co-sponsored the events with the Fox Valley Music Foundation.
                 </p>
+                <Link
+                  href="https://www.foxvalleymusicfoundation.com/workshops-performance-series"
+                  target="_blank"
+                  className="text-blue-600 hover:text-blue-700 font-semibold inline-flex items-center gap-2 group/link"
+                >
+                  Learn More
+                  <svg className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </Link>
               </div>
 
               {/* Leland Bluebird Recording Sessions */}
@@ -180,9 +210,19 @@ export default function ProgramsPage() {
                 <p className="text-gray-700 leading-relaxed mb-4">
                   The Leland Bluebird Sessions is a recording project instigated and brought about by Waterloo Sunset Records and inspired by the work of the Fox Valley Blues Society, Blues on The Fox Festival Committee and the Fox Valley Music Foundation.
                 </p>
-                <p className="text-gray-700 leading-relaxed">
+                <p className="text-gray-700 leading-relaxed mb-6">
                   This project was sponsored in part by a National Endowment of the Arts grant awarded to the FVMF, with assistance from the City of Aurora. It is a tribute to the records that were produced on the top floor of the Leland Hotel in Aurora, Illinois during a period in time beginning on May 4, 1937, and ending on December 19, 1938.
                 </p>
+                <Link
+                  href="https://www.foxvalleymusicfoundation.com/bluebird-sessions"
+                  target="_blank"
+                  className="text-blue-600 hover:text-blue-700 font-semibold inline-flex items-center gap-2 group/link"
+                >
+                  Learn More
+                  <svg className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </Link>
               </div>
 
               {/* Blues on the Fox */}
@@ -193,9 +233,19 @@ export default function ProgramsPage() {
                 <p className="text-gray-700 leading-relaxed mb-4">
                   A sincere and abiding love of blues music was the common denominator and impetus for the formation of what is now known as the Fox Valley Music Foundation and the Foundation's live performance room, The Venue. The Blues On The Fox Festival was truly the cornerstone of the Fox Valley's blues music scene.
                 </p>
-                <p className="text-gray-700 leading-relaxed">
+                <p className="text-gray-700 leading-relaxed mb-6">
                   The festival has grown from its origins as a downtown intimate closed street festival of years gone by, to becoming a premier national Blues festival rivaling larger city fests in existence before Blues on the Fox was even born.
                 </p>
+                <Link
+                  href="https://www.foxvalleymusicfoundation.com/blues-on-the-fox"
+                  target="_blank"
+                  className="text-blue-600 hover:text-blue-700 font-semibold inline-flex items-center gap-2 group/link"
+                >
+                  Learn More
+                  <svg className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </Link>
               </div>
             </div>
           </div>
