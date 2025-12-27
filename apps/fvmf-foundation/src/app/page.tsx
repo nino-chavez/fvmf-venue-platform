@@ -113,13 +113,24 @@ export default async function HomePage() {
             {/* Horizontal scroll container */}
             <div className="overflow-x-auto pb-4 -mx-4 px-4">
               <div className="flex gap-6" style={{ width: 'max-content' }}>
-                {/* Event Card - Repeat 5-6 times */}
-                {[1, 2, 3, 4, 5].map((i) => (
-                  <div key={i} className="w-80 bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group">
-                    <div className="h-48 bg-gradient-to-br from-blue-500 to-purple-600 group-hover:scale-105 transition-transform duration-300" />
+                {/* Event Card - Repeat 5 times with varied gradients */}
+                {[
+                  { gradient: 'from-blue-500 to-purple-600' },
+                  { gradient: 'from-purple-500 to-pink-600' },
+                  { gradient: 'from-orange-500 to-red-600' },
+                  { gradient: 'from-green-600 to-teal-600' },
+                  { gradient: 'from-blue-600 to-indigo-700' }
+                ].map((item, i) => (
+                  <div key={i} className="w-80 bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group flex-shrink-0">
+                    <div className={`h-48 bg-gradient-to-br ${item.gradient} relative overflow-hidden`}>
+                      <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-300" />
+                      <div className="absolute bottom-4 right-4 bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full">
+                        <span className="text-white text-xs font-semibold">UPCOMING</span>
+                      </div>
+                    </div>
                     <div className="p-6">
                       <div className="text-sm text-blue-600 font-semibold mb-2">SAT, JAN 15 • 8:00 PM</div>
-                      <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">Artist Name {i}</h3>
+                      <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">Artist Name {i + 1}</h3>
                       <p className="text-gray-600 text-sm mb-4">Genre • $15-25</p>
                       <Button size="sm" className="w-full bg-blue-500 hover:bg-blue-600">
                         Get Tickets

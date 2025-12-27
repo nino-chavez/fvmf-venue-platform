@@ -2,6 +2,7 @@ import { Navigation } from '@/components/Navigation'
 import { Footer } from '@/components/Footer'
 import { Button } from '@/components/ui/Button'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function ProgramsPage() {
   return (
@@ -10,12 +11,24 @@ export default function ProgramsPage() {
 
       <main className="min-h-screen bg-white">
         {/* Hero Section */}
-        <section className="relative py-20 bg-gradient-to-r from-blue-600 to-purple-700">
-          <div className="container mx-auto px-4 text-center">
-            <h1 className="text-5xl sm:text-6xl font-bold text-white mb-6">
+        <section className="relative py-32 bg-gray-900 overflow-hidden">
+          {/* Background Image */}
+          <div className="absolute inset-0">
+            <Image
+              src="/images/hero-music-background.png"
+              alt="Music programs background"
+              fill
+              className="object-cover opacity-30"
+            />
+            <div className="absolute inset-0 bg-gradient-to-b from-purple-900/80 via-blue-900/70 to-gray-900/90" />
+          </div>
+
+          {/* Content */}
+          <div className="container mx-auto px-4 text-center relative z-10">
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-6">
               Programs & Projects
             </h1>
-            <p className="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl sm:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed">
               The Fox Valley Music Foundation leads and supports a wide range of music programs, projects, and events held at The Venue and throughout the Fox Valley River area.
             </p>
           </div>
