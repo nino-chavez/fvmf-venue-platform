@@ -12,14 +12,32 @@ export default function AboutPage() {
 
       <main className="min-h-screen bg-white">
         {/* Hero Section */}
-        <section className="relative py-20 bg-gradient-to-r from-blue-600 to-purple-700">
-          <div className="container mx-auto px-4 text-center">
-            <h1 className="text-5xl sm:text-6xl font-bold text-white mb-6">
+        <section className="relative py-32 bg-gray-900 overflow-hidden">
+          {/* Background Image */}
+          <div className="absolute inset-0">
+            <Image
+              src="/images/hero-music-background.png"
+              alt="Music background"
+              fill
+              className="object-cover opacity-40"
+            />
+            <div className="absolute inset-0 bg-gradient-to-b from-blue-900/80 via-purple-900/70 to-gray-900/90" />
+          </div>
+
+          {/* Content */}
+          <div className="container mx-auto px-4 text-center relative z-10">
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-6">
               Our Story
             </h1>
-            <p className="text-xl text-white/90 max-w-3xl mx-auto">
+            <p className="text-xl sm:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed">
               Preserving the musical heritage of the Fox Valley since 2014
             </p>
+            <div className="mt-8 inline-flex items-center gap-3 bg-white/10 backdrop-blur-sm border border-white/20 px-6 py-3 rounded-lg">
+              <svg className="w-5 h-5 text-orange-400" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" />
+              </svg>
+              <span className="text-white/90 font-semibold">Preserve • Promote • Protect • Present</span>
+            </div>
           </div>
         </section>
 

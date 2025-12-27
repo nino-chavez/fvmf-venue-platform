@@ -31,13 +31,13 @@ export function Timeline({ events }: TimelineProps) {
 
 function TimelineItem({ event, index }: { event: TimelineEvent; index: number }) {
   const ref = useRef<HTMLDivElement>(null)
-  const isInView = useInView(ref, { once: true, amount: 0.3 })
+  const isInView = useInView(ref, { once: true, amount: 0.1 })
 
   return (
     <div
       ref={ref}
       className={`relative pl-20 transition-all duration-700 ${
-        isInView ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'
+        isInView ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-12'
       }`}
       style={{ transitionDelay: `${index * 100}ms` }}
     >

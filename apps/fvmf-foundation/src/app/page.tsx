@@ -2,7 +2,6 @@ import { Navigation } from '@/components/Navigation'
 import { Footer } from '@/components/Footer'
 import { Button } from '@/components/ui/Button'
 import { AnimatedCounter } from '@/components/AnimatedCounter'
-import { PhotoGallery } from '@/components/PhotoGallery'
 import Link from 'next/link'
 import Image from 'next/image'
 import { client, featuredProgramsQuery, featuredTestimonialsQuery, allImpactMetricsQuery } from '@/lib/sanity'
@@ -231,26 +230,55 @@ export default async function HomePage() {
               </p>
             </div>
 
-            <PhotoGallery
-              columns={3}
-              photos={[
-                {
-                  src: '/images/venue-photo.jpg',
-                  alt: 'The Venue interior',
-                  caption: 'Intimate 200-seat listening room'
-                },
-                {
-                  src: '/images/hero-music-background.png',
-                  alt: 'Live performance at The Venue',
-                  caption: 'World-class artists on our stage'
-                },
-                {
-                  src: '/images/venue-photo.jpg',
-                  alt: 'The Venue stage',
-                  caption: 'State-of-the-art sound and lighting'
-                }
-              ]}
-            />
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {/* Venue Interior Photo */}
+              <button
+                className="relative aspect-[4/3] overflow-hidden rounded-lg bg-gray-100 group cursor-pointer"
+                onClick={() => window.open('/the-venue', '_self')}
+              >
+                <Image
+                  src="/images/venue-photo.jpg"
+                  alt="The Venue interior - intimate 200-seat listening room"
+                  fill
+                  className="object-cover transition-transform duration-300 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <p className="text-white text-sm font-medium">Intimate 200-seat listening room</p>
+                </div>
+              </button>
+
+              {/* Live Performance Hero */}
+              <button
+                className="relative aspect-[4/3] overflow-hidden rounded-lg bg-gray-100 group cursor-pointer"
+                onClick={() => window.open('/the-venue', '_self')}
+              >
+                <Image
+                  src="/images/hero-music-background.png"
+                  alt="Live performance at The Venue"
+                  fill
+                  className="object-cover transition-transform duration-300 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <p className="text-white text-sm font-medium">World-class artists on our stage</p>
+                </div>
+              </button>
+
+              {/* State-of-the-art Visual */}
+              <div className="relative aspect-[4/3] overflow-hidden rounded-lg group">
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-600 via-purple-600 to-orange-500" />
+                <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48cGF0dGVybiBpZD0iZ3JpZCIgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIj48cGF0aCBkPSJNIDQwIDAgTCAwIDAgMCA0MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLW9wYWNpdHk9IjAuMSIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+')] opacity-30" />
+                <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center">
+                  <svg className="w-16 h-16 text-white/90 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3" />
+                  </svg>
+                  <h3 className="text-xl font-bold text-white mb-2">State-of-the-Art</h3>
+                  <p className="text-white/90 text-sm">Professional sound & lighting system</p>
+                </div>
+                <div className="absolute bottom-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-700" />
+              </div>
+            </div>
 
             <div className="text-center mt-12">
               <Button size="lg" className="bg-blue-500 hover:bg-blue-600" asChild>
