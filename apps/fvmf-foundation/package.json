@@ -6,7 +6,8 @@
     "dev": "next dev -p 3001",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "generate:images": "tsx scripts/generate-venue-images.ts"
   },
   "dependencies": {
     "@sanity/client": "^7.13.2",
