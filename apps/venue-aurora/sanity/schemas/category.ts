@@ -7,6 +7,15 @@ export default defineType({
   icon: () => '🏷️',
   fields: [
     defineField({
+      name: 'contentType',
+      title: 'Content Type',
+      type: 'string',
+      readOnly: true,
+      hidden: true,
+      initialValue: 'venue',
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
       name: 'title',
       title: 'Title',
       type: 'string',

@@ -15,7 +15,7 @@ interface PageProps {
 }
 
 async function getPage(slug: string) {
-  const query = `*[_type == "page" && slug.current == $slug][0]{
+  const query = `*[_type == "page" && contentType == "foundation" && slug.current == $slug][0]{
     _id,
     title,
     excerpt,
@@ -143,7 +143,7 @@ export default async function PageRoute({ params }: PageProps) {
 }
 
 export async function generateStaticParams() {
-  const query = `*[_type == "page"]{ "slug": slug.current }`
+  const query = `*[_type == "page" && contentType == "foundation"]{ "slug": slug.current }`
   const pages = await client.fetch(query)
   return pages.map((page: { slug: string }) => ({ slug: page.slug }))
 }

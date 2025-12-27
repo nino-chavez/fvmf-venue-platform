@@ -20,7 +20,7 @@ interface Post {
 }
 
 async function getPosts() {
-  const query = `*[_type == "post"] | order(publishedAt desc) {
+  const query = `*[_type == "post" && contentType == "foundation"] | order(publishedAt desc) {
     _id,
     title,
     slug,
@@ -35,7 +35,7 @@ async function getPosts() {
 }
 
 async function getFeaturedPosts() {
-  const query = `*[_type == "post" && featured == true] | order(publishedAt desc)[0...3] {
+  const query = `*[_type == "post" && contentType == "foundation" && featured == true] | order(publishedAt desc)[0...3] {
     _id,
     title,
     slug,

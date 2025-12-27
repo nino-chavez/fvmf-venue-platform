@@ -8,7 +8,7 @@ export default defineConfig({
   title: 'FVMF Foundation',
 
   projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!,
-  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || 'fvmf-foundation',
+  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || 'production',
 
   basePath: '/studio',
 
@@ -25,7 +25,7 @@ export default defineConfig({
               .child(
                 S.documentList()
                   .title('News & Updates')
-                  .filter('_type == "post"')
+                  .filter('_type == "post" && contentType == "foundation"')
                   .defaultOrdering([{ field: 'publishedAt', direction: 'desc' }])
               ),
 
@@ -35,7 +35,7 @@ export default defineConfig({
               .child(
                 S.documentList()
                   .title('Pages')
-                  .filter('_type == "page"')
+                  .filter('_type == "page" && contentType == "foundation"')
               ),
 
             S.divider(),

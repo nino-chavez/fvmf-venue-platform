@@ -14,7 +14,7 @@ interface PostProps {
 }
 
 async function getPost(slug: string) {
-  const query = `*[_type == "post" && slug.current == $slug][0]{
+  const query = `*[_type == "post" && contentType == "foundation" && slug.current == $slug][0]{
     _id,
     title,
     excerpt,
@@ -204,7 +204,7 @@ export default async function PostPage({ params }: PostProps) {
 }
 
 export async function generateStaticParams() {
-  const query = `*[_type == "post"]{ "slug": slug.current }`
+  const query = `*[_type == "post" && contentType == "foundation"]{ "slug": slug.current }`
   const posts = await client.fetch(query)
   return posts.map((post: { slug: string }) => ({ slug: post.slug }))
 }

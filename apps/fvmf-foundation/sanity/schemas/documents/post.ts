@@ -7,6 +7,15 @@ export const post = defineType({
   icon: () => '📰',
   fields: [
     defineField({
+      name: 'contentType',
+      title: 'Content Type',
+      type: 'string',
+      readOnly: true,
+      hidden: true,
+      initialValue: 'foundation',
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
       name: 'title',
       title: 'Title',
       type: 'string',
