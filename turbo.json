@@ -3,11 +3,33 @@
   "tasks": {
     "build": {
       "dependsOn": ["^build"],
-      "outputs": [".next/**", "!.next/cache/**"]
+      "outputs": [".next/**", "!.next/cache/**"],
+      "env": [
+        "EVENTBRITE_ORG_ID",
+        "EVENTBRITE_VENUE_ID",
+        "EVENTBRITE_PRIVATE_TOKEN",
+        "EVENTBRITE_PUBLIC_TOKEN",
+        "TICKETTAILOR_API_KEY",
+        "SANITY_API_TOKEN",
+        "NEXT_PUBLIC_SANITY_PROJECT_ID",
+        "NEXT_PUBLIC_SANITY_DATASET",
+        "NEXT_PUBLIC_SANITY_API_VERSION"
+      ]
     },
     "dev": {
       "cache": false,
-      "persistent": true
+      "persistent": true,
+      "env": [
+        "EVENTBRITE_ORG_ID",
+        "EVENTBRITE_VENUE_ID",
+        "EVENTBRITE_PRIVATE_TOKEN",
+        "EVENTBRITE_PUBLIC_TOKEN",
+        "TICKETTAILOR_API_KEY",
+        "SANITY_API_TOKEN",
+        "NEXT_PUBLIC_SANITY_PROJECT_ID",
+        "NEXT_PUBLIC_SANITY_DATASET",
+        "NEXT_PUBLIC_SANITY_API_VERSION"
+      ]
     },
     "lint": {
       "dependsOn": ["^lint"]
