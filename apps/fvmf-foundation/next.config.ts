@@ -12,6 +12,11 @@ const nextConfig: NextConfig = {
         hostname: 'static.wixstatic.com',
         pathname: '/media/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'cdn.sanity.io',
+        pathname: '/images/**',
+      },
     ],
   },
 }
