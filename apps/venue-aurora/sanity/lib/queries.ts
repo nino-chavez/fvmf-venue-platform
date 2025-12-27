@@ -2,7 +2,7 @@ import { groq } from 'next-sanity';
 
 // Get all published posts
 export const postsQuery = groq`
-  *[_type == "post" && publishedAt < now()] | order(publishedAt desc) {
+  *[_type == "post" && contentType == "venue" && publishedAt < now()] | order(publishedAt desc) {
     _id,
     title,
     slug,
@@ -38,7 +38,7 @@ export const postsQuery = groq`
 
 // Get a single post by slug
 export const postQuery = groq`
-  *[_type == "post" && slug.current == $slug][0] {
+  *[_type == "post" && contentType == "venue" && slug.current == $slug][0] {
     _id,
     title,
     slug,
@@ -81,19 +81,19 @@ export const postQuery = groq`
 
 // Get all categories
 export const categoriesQuery = groq`
-  *[_type == "category"] | order(title asc) {
+  *[_type == "category" && contentType == "venue"] | order(title asc) {
     _id,
     title,
     slug,
     description,
     color,
-    "postCount": count(*[_type == "post" && references(^._id)])
+    "postCount": count(*[_type == "post" && contentType == "venue" && references(^._id)])
   }
 `;
 
 // Get posts by category
 export const postsByCategoryQuery = groq`
-  *[_type == "post" && references($categoryId) && publishedAt < now()] | order(publishedAt desc) {
+  *[_type == "post" && contentType == "venue" && references($categoryId) && publishedAt < now()] | order(publishedAt desc) {
     _id,
     title,
     slug,
@@ -122,7 +122,7 @@ export const postsByCategoryQuery = groq`
 
 // Get featured posts
 export const featuredPostsQuery = groq`
-  *[_type == "post" && featured == true && publishedAt < now()] | order(publishedAt desc) [0...3] {
+  *[_type == "post" && contentType == "venue" && featured == true && publishedAt < now()] | order(publishedAt desc) [0...3] {
     _id,
     title,
     slug,
@@ -144,7 +144,7 @@ export const featuredPostsQuery = groq`
 
 // Get related posts (same categories, exclude current post)
 export const relatedPostsQuery = groq`
-  *[_type == "post" && _id != $postId && count((categories[]->slug.current)[@ in $categories]) > 0 && publishedAt < now()] | order(publishedAt desc) [0...3] {
+  *[_type == "post" && contentType == "venue" && _id != $postId && count((categories[]->slug.current)[@ in $categories]) > 0 && publishedAt < now()] | order(publishedAt desc) [0...3] {
     _id,
     title,
     slug,
@@ -165,7 +165,7 @@ export const relatedPostsQuery = groq`
 
 // Get all authors
 export const authorsQuery = groq`
-  *[_type == "author"] | order(name asc) {
+  *[_type == "author" && contentType == "venue"] | order(name asc) {
     _id,
     name,
     slug,
@@ -176,13 +176,13 @@ export const authorsQuery = groq`
         url
       }
     },
-    "postCount": count(*[_type == "post" && references(^._id)])
+    "postCount": count(*[_type == "post" && contentType == "venue" && references(^._id)])
   }
 `;
 
 // Get posts by author
 export const postsByAuthorQuery = groq`
-  *[_type == "post" && author._ref == $authorId && publishedAt < now()] | order(publishedAt desc) {
+  *[_type == "post" && contentType == "venue" && author._ref == $authorId && publishedAt < now()] | order(publishedAt desc) {
     _id,
     title,
     slug,
@@ -206,5 +206,5 @@ export const postsByAuthorQuery = groq`
 
 // Get post slugs for static generation
 export const postSlugsQuery = groq`
-  *[_type == "post" && defined(slug.current)][].slug.current
+  *[_type == "post" && contentType == "venue" && defined(slug.current)][].slug.current
 `;
